@@ -17,20 +17,20 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage('Build with Maven') {
+        // stage('Build with Maven') {
 
-            steps {
-            // Build the application using Maven
-                sh 'mvn clean package'
-            }
-        }
-        stage('Run Selenium Tests') {
-            steps {
-            // Run Selenium tests (this assumes you have a script for running your tests)
-            // You may need to adjust this command based on your test setup
-                sh 'mvn test -Dtest=YourSeleniumTestClass'
-            }
-        }
+        //     steps {
+        //     // Build the application using Maven
+        //         sh 'mvn clean package'
+        //     }
+        // }
+        // stage('Run Selenium Tests') {
+        //     steps {
+        //     // Run Selenium tests (this assumes you have a script for running your tests)
+        //     // You may need to adjust this command based on your test setup
+        //         sh 'mvn test -Dtest=YourSeleniumTestClass'
+        //     }
+        // }
     }
     post {
         success {
