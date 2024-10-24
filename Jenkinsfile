@@ -1,11 +1,13 @@
 pipeline {
     agent any
-    
+    tools {
+        node 'NodeJS' // Name of your NodeJS installation in Jenkins
+    }
     stages {
         stage('Checkout') {
             steps {
             // Checkout the code from GitHub
-                git url: 'https://github.com/your-repo/your-project.git',
+                git url: 'https://github.com/sarthakjain03/jenkins_basic.git',
                 branch: 'main'
             }
         }
@@ -26,7 +28,7 @@ pipeline {
             steps {
             // Run Selenium tests (this assumes you have a script for running your tests)
             // You may need to adjust this command based on your test setup
-            sh 'mvn test -Dtest=YourSeleniumTestClass'
+                sh 'mvn test -Dtest=YourSeleniumTestClass'
             }
         }
     }
